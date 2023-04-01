@@ -1,0 +1,70 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f2f2f2;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 100px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  height: auto; /* altura ajustada automaticamente */
+}
+
+.imagem {
+  margin-bottom: 10px;
+}
+
+.fazer-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Adicionado */
+  align-items: center;
+}
+
+.email,
+.password {
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 350px;
+  background-color: #F6F8F8;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  font-style: oblique;
+  font-weight: normal;
+}
+
+.button-entrar {
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #5EA3E3;
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+  border: none;
+}
+
+.button-entrar:hover {
+  background-color: #74abdf;
+}
