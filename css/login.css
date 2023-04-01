@@ -21,7 +21,7 @@ body {
 }
 
 .imagem {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .fazer-login {
@@ -35,12 +35,21 @@ body {
 .password {
   margin-bottom: 20px;
   padding: 10px;
+  margin-top: 00px;
   width: 350px;
   background-color: #F6F8F8;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-style: oblique;
+  font-weight: normal;
 }
 
 h1 {
@@ -51,8 +60,11 @@ h1 {
 }
 
 .button-entrar {
-  width: 50%;
-  padding: 10px;
+  width: 200px;
+  height: 40px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 8px;
   border-radius: 5px;
   background-color: #5EA3E3;
   color: #fff;
@@ -65,6 +77,43 @@ h1 {
   border: none;
 }
 
+
 .button-entrar:hover {
   background-color: #74abdf;
+}
+
+/* Estilos para telas maiores */
+@media only screen and (min-width: 768px) {
+  .login {
+    padding: 100px;
+    width: 400px;
+  }
+}
+
+/* Estilos para telas menores */
+@media only screen and (max-width: 767px) {
+  .login {
+    padding: 50px;
+    width: 90%;
+    border-radius: 10px;
+  }
+  
+  .email, .password {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .button-entrar {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 16px;
+  }
 }
