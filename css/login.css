@@ -37,24 +37,35 @@ body {
   padding: 10px;
   margin-top: 00px;
   width: 350px;
-  background-color: #F6F8F8;
+  background-color: #f6f8f8;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
+}
+
+.complement {
+  font-size: 14px;
+  color: #959595;
+  margin: -10px;
+  margin-top: 2px;
+}
+
+.complement:hover {
+  color: #505050;
 }
 
 p {
   font-size: 18px;
   margin-bottom: 40px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: oblique;
   font-weight: normal;
 }
 
 h1 {
   font-size: 18px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: oblique;
   font-weight: normal;
 }
@@ -66,17 +77,16 @@ h1 {
   margin-bottom: 20px;
   padding: 8px;
   border-radius: 5px;
-  background-color: #5EA3E3;
+  background-color: #5ea3e3;
   color: #fff;
   font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   cursor: pointer;
   border: none;
 }
-
 
 .button-entrar:hover {
   background-color: #74abdf;
@@ -97,22 +107,23 @@ h1 {
     width: 90%;
     border-radius: 10px;
   }
-  
-  .email, .password {
+
+  .email,
+  .password {
     width: 100%;
     max-width: 300px;
   }
-  
+
   .button-entrar {
     width: 100%;
     max-width: 200px;
   }
-  
+
   p {
     font-size: 16px;
     margin-bottom: 20px;
   }
-  
+
   h1 {
     font-size: 16px;
   }
