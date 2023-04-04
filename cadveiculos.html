@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css" />
+
+    <title>Cadastro de Veículos</title>
+  </head>
+  <body>
+    <div class="cadastro">
+      <div class="imagem">
+        <i class="fa-solid fa-car icons-color"></i>
+      </div>
+      <p>Cadastre seu veículo</p>
+      <form class="fazer-cadastro">
+        <label for="model">
+          <input
+            class="model"
+            type="text"
+            id="model"
+            required="required"
+            placeholder="Marca/Modelo"
+          />
+        </label>
+        <label for="renavam">
+          <input
+            class="renavam"
+            type="text"
+            id="renavam"
+            required="required"
+            placeholder="Renavam"
+          />
+        </label>
+        <label for="cor">
+          <input
+            class="renavam"
+            type="text"
+            id="cor"
+            required="required"
+            placeholder="Cor"
+          />
+        </label>
+        <label for="placa">
+          <input
+            class="placa"
+            type="text"
+            id="placa"
+            required="required"
+            placeholder="Placa"
+          />
+        </label>
+        <label for="quilometros">
+          <input
+            class="km"
+            type="number"
+            id="km"
+            required="required"
+            placeholder="Km rodados"
+          />
+        </label>
+        <label for="data">
+          <input
+            class="data"
+            type="text"
+            id="dataCompra"
+            required="required"
+            placeholder="Data de Compra"
+            onkeypress="$(this).mask('00/00/0000');"
+          />
+        </label>
+        <label for="data">
+          <input
+            class="data"
+            type="text"
+            id="dataVencimento"
+            required="required"
+            placeholder="Data de Vencimento da Revisão"
+            onkeypress="$(this).mask('00/00/0000');"
+          />
+        </label>
+        <button class="button-cadastrar" type="submit">
+          <h1>Cadastrar</h1>
+        </button>
+      </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+    <script src="./fontawesome/js/all.min.js"></script>
+  </body>
+</html>
