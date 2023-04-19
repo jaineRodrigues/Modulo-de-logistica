@@ -1,0 +1,193 @@
+/* Global styles */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f2f2f2;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+/* Login container styles */
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  max-width: 90%;
+  height: auto; /* height adjusted automatically */
+  gap: 20px; /* novo */
+}
+
+
+/* Logo styles */
+
+.imagem {
+  margin-bottom: 10px;
+}
+
+/* Form styles */
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 350px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.complement {
+  font-size: 14px;
+  color: #959595;
+  margin: -10px 0 0 0;
+  text-align: center;
+}
+
+.complement:hover {
+  color: #505050;
+}
+
+.fazer-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Adicionado */
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 350px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.email,
+.password {
+  margin-bottom: 10px;
+  padding: 10px;
+  margin-top: 00px;
+  width: 350px;
+  background-color: #f6f8f8;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.complement {
+  font-size: 14px;
+  color: #959595;
+  margin: -10px;
+  margin-top: 2px;
+}
+
+.complement:hover {
+  color: #505050;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-family: "Roboto", sans-serif;
+  font-style: oblique;
+  font-weight: normal;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  font-style: oblique;
+  font-weight: normal;
+}
+
+.button-entrar {
+  width: 200px;
+  height: 40px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #5ea3e3;
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  border: none;
+}
+
+.button-entrar:hover {
+  background-color: #74abdf;
+}
+
+.alert {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f44336;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Estilos para telas maiores */
+@media only screen and (min-width: 768px) {
+  .login {
+    padding: 100px;
+    width: 400px;
+  }
+}
+
+/* Estilos para telas menores */
+@media only screen and (max-width: 767px) {
+  .login {
+    padding: 50px;
+    width: 90%;
+    border-radius: 10px;
+  }
+
+  .email,
+  .password {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .button-entrar {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 16px;
+  }
+}
