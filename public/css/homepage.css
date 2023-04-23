@@ -5,6 +5,7 @@
     --black: #13131a;
     --bg: #5EA3E3;
     --border: .1rem solid rgba(255, 255, 255, .3);
+    --abouth: rgb(253, 253, 253);
 }
 
 * {
@@ -143,13 +144,15 @@ body {
 
 .sobre {
     display: flex;
-    padding: 5rem;
-    background: var(--main-color);
+    margin: 4rem;
+    background: var(--abouth);
     flex-wrap: wrap;
 }
 
 .sobre .imagem {
     flex: 1 1 45rem;
+    padding: 2em;
+    border-radius: 2em;
 }
 
 .sobre .imagem img {
@@ -163,12 +166,14 @@ body {
 .sobre .texto h3 {
     color: var(--black);
     font-size: 2.5rem;
+    text-transform: uppercase;
+    padding: 2em;
 }
 
 .sobre .texto p {
     color: var(--black);
-    line-height: 1.7;
-    padding: 1rem 0;
+    line-height: 2.3;
+    padding: 1rem ;
     font-size: 1.5rem;
 
 }

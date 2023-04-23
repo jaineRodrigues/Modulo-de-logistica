@@ -57,13 +57,27 @@ exports.register = (req, res) => {
   );
 };
 
+exports.clientPanel = (req, res) => {
+  res.render('clientPanel');
+  console.log(req.body);
+
+};
+
+exports.adminPanel = (req, res) => {
+  res.render('adminPanel');
+   console.log(req.body);
+
+};
+
+
+
 exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
     if (!email || !password) {
       return res.status(400).render("login", {
-        message: "Please provide an email and password",
+        message: "Por favor, informe um email e senha",
       });
     }
     db.query(
@@ -73,29 +87,24 @@ exports.login = async (req, res) => {
         if (error) {
           console.log(error);
           return res.status(500).render("login", {
-            message: "Internal server error",
+            message: "Erro interno do servidor",
           });
         }
 
         if (!results || results.length === 0 || !(await bcrypt.compare(password, results[0].password))) {
           res.status(401).render('login', {
-            message: "Email or Password is incorrect",
+            message: "Email ou senha incorretos",
           });
-
-        } else if (
-          !results ||
-          !(await bcrypt.compare(password, results[0].password))
-        ) {
-          res.status(401).render('login', {
-            message: "Email or Password is incorrent",
-          });
+          
         } else {
-          const id = results[0].id;
+          const user = results[0];
+          const userType = user.tipo;
 
+          const id = user.id;
           const token = jwt.sign({ id }, process.env.JWT_SECRET, {
             expiresIn: process.env.JWT_EXPIRES_IN,
           });
-          console.log("The token is: " + token);
+          console.log("O token é: " + token);
 
           const cookieOptions = {
             expires: new Date(
@@ -105,7 +114,19 @@ exports.login = async (req, res) => {
           };
 
           res.cookie("jwt", token, cookieOptions);
-          res.status(200).redirect("/");
+
+          if (userType === "cliente") {
+            // redirecionar para a tela do cliente
+            res.status(200).redirect("clientPanel");
+          } else if (userType === "administrador") {
+            // redirecionar para a tela do administrador
+            res.status(200).redirect("adminPanel");
+          } else {
+            // tipo de usuário inválido
+            res.status(401).render('login', {
+              message: "Tipo de usuário inválido",
+            });
+          }
         }
       }
     );
@@ -113,3 +134,4 @@ exports.login = async (req, res) => {
     console.log(error);
   }
 };
+

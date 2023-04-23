@@ -4,5 +4,8 @@ const router = express.Router();
 
 router.post('/register', authController.register )
 router.post('/login', authController.login )
-//router.post('/userClient, autcontroller.userClient');
+
+router.post('/clientPanel', authController.clientPanel);
+router.post('/adminPanel', authController.adminPanel);
+
 module.exports = router;
