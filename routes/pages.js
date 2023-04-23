@@ -23,4 +23,8 @@ router.get('/adminPanel', (req, res) => {
     res.render('adminPanel');
 })
 
+router.get('/cadveiculos', (req, res) => {
+    res.render('cadveiculos');
+})
+
 module.exports = router;

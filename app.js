@@ -42,6 +42,7 @@ db.connect((err) => {
 //routes
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
+app.use('/cadveiculos', require('./routes/cadveiculos'));
 
 
 //Porta que o servidor(app) vai rodar
