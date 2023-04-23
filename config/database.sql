@@ -28,6 +28,7 @@ CHANGE COLUMN senha password VARCHAR(255) NOT NULL,
 
 ALTER TABLE usuarios MODIFY COLUMN  tipo VARCHAR(255) DEFAULT 'cliente';
 
+
 -- Inserir usuário administrador padrão
 INSERT INTO usuarios (nome, email, senha, tipo) 
 VALUES ('Admin', 'admin@ifsystem.com', '123456', 'admin');
