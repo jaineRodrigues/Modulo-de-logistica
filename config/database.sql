@@ -24,21 +24,27 @@ CREATE TABLE condutores (
 ALTER TABLE usuarios
 CHANGE COLUMN nome name VARCHAR(255) NOT NULL,
 CHANGE COLUMN senha password VARCHAR(255) NOT NULL,
-
-
-ALTER TABLE usuarios MODIFY COLUMN  tipo VARCHAR(255) DEFAULT 'cliente';
-
+MODIFY COLUMN tipo VARCHAR(255) DEFAULT 'cliente';
 
 -- Inserir usuário administrador padrão
-INSERT INTO usuarios (nome, email, senha, tipo) 
+INSERT INTO usuarios (name, email, password, tipo) 
 VALUES ('Admin', 'admin@ifsystem.com', '123456', 'admin');
 
 -- Inserir usuário cliente padrão
-INSERT INTO usuarios (nome, email, senha, tipo) 
+INSERT INTO usuarios (name, email, password, tipo) 
 VALUES ('Cliente', 'cliente@ifsystem.com', '123456', 'cliente');
 
 -- Alterr plugin de autenticação --
 USE mysql;
-SELECT usuarios, Host, plugin FROM mysql.usuarios;
+SELECT user, Host, plugin FROM mysql.user;
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pgadmin';
 
+CREATE TABLE veiculo (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  marca VARCHAR(255) NOT NULL,
+  modelo VARCHAR(255) NOT NULL,
+  renavam VARCHAR(255) NOT NULL,
+  placa VARCHAR(255) NOT NULL,
+  dataCompra DATE NOT NULL,
+  dataVencimento DATE NOT NULL
+);
