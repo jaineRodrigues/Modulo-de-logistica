@@ -1,12 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h3>Bem vindo!</h3>
-</body>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página do Admin</title>
+
+    <!-- Link do font awesome  -->
+    <link rel="stylesheet" href="../fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/css/homepage.css" />
+
+  </head>
+  <body>
+    <header class="cabeçalho">
+      <a href="#" class="logo">
+        <img src="/img/logo.jpg" alt="logo do sistema" />
+      </a>
+
+      <nav class="navbar">
+        <a href="#Inicio">Início</a>
+        <a href="#">Cadastros</a>
+        <a href="#">Relatórios</a>
+        <a href="#">Configurações</a>
+        <a href="#">Marcos
+          <i class="fa-solid fa-circle-user user-custom"></i></a>
+
+      </nav>
+
+      <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+      </div>
+
+      <div class="search-form">
+        <input type="text" id="search-box" placeholder="search here..." />
+        <label for="search-box" class="fas fa-search"></label>
+      </div>
+    </header>
+
+    <section class="Container" id="Serviços">
+
+      <h1 class="text_service">Dashboard</h1>
+      <div class="box-container">
+        <div class="box">
+          <i class="fa-solid fa-arrows-left-right icon-size"></i>
+          <h3>TRANSAÇÕES</h3>
+          <h3>66</h3>
+          <h4 class="color-gold">MÊS ANTERIOR</h4>
+          <hr />
+          <h3>25</h3>
+          <h4 class="color-gold">MÊS ATUAL</h4>
+        </div>
+
+        <div class="box">
+          <i class="fa-solid fa-dollar-sign icon-size"></i>
+          <h3>VALOR GASTO</h3>
+          <h3>R$ 0,00</h3>
+          <h4 class="color-gold">NO MÊS</h4>
+          <hr />
+          <h3>R$ 0,00</h3>
+          <h4 class="color-gold">NO ANO</h4>
+        </div>
+
+        <div class="box">
+          <i class="fa-solid fa-comments-dollar icon-size"></i>
+          <h3>CUSTO UNITÁRIO</h3>
+          <h3>R$ 0,00</h3>
+          <h4 class="color-gold">MÊS ANTERIOR</h4>
+          <hr />
+          <h3>R$ 0,00</h3>
+          <h4 class="color-gold">MÊS ATUAL</h4>
+        </div>
+
+      </div>
+    </section>
+    <section class="Container" id="Serviços">
+
+      <div class="box-container m-bottom">
+        <div class="box">
+          <i class="fa-solid fa-truck icon-size"></i>
+          <h3>MOTORISTAS</h3>
+          <h3>22</h3>
+          <h4 class="color-gold">MOTORISTAS EM MOVIMENTO</h4>
+          <hr />
+          <h3>116</h3>
+          <h4 class="color-gold">MOTORISTAS CADASTRADOS</h4>
+        </div>
+
+        <div class="box">
+          <i class="fa-solid fa-gas-pump icon-size"></i>
+          <h3>POSTOS</h3>
+          <h3>3029</h3>
+          <h4 class="color-gold">POSTOS CREDENCIADOS</h4>
+          <hr />
+          <h3>0</h3>
+          <h4 class="color-gold">ATIVOS COM ABASTECIMENTO</h4>
+        </div>
+
+        <div class="box">
+          <i class="fa-sharp fa-solid fa-money-check-dollar icon-size"></i>
+          <h3>CONTA</h3>
+          <h3>R$ 36.687,57</h3>
+          <h4 class="color-gold">VALOR UTILIZADO</h4>
+          <hr />
+          <h3>R$ 155.725,94</h3>
+          <h4 class="color-gold">SALDO</h4>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="rodape" id="Contato">
+
+      <div class="redes">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+      </div>
+      <div class="credito"> <span>@IF sistema</span></div>
+
+    </section>
+
+    <script src="/js/homepage.js"></script>
+    <script
+      src="https://kit.fontawesome.com/560011bd3e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
