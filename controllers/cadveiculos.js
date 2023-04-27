@@ -31,7 +31,7 @@ exports.register = (req, res) => {
                 console.log(err);
             }else{
                 console.log(result);
-                return res.render('register',{
+                return res.render('cadveiculos',{
                     message:'Veiculo cadastrado'
                 });
             };
