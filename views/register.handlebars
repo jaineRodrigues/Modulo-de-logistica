@@ -1,76 +1,101 @@
-
-<!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    ></script>
 
-  <link rel="stylesheet" href="/css/register.css" />
+    <link rel="stylesheet" href="/css/register.css" />
 
-  <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
 
-  <title>Tela de Login</title>
-</head>
+    <title>Tela de Login</title>
+  </head>
 
-<body>
-  <div class="cadastro">
-    <div class="imagem">
-      <i class="fa-regular fa-user icons-color"></i>
-    </div>
-
-    <p>Cadastre-se aqui</p>
-
-    <form class="fazer-cadastro" action="/auth/register" method="POST">
-
-    <div class="form-group">
-      <label for="userType">Tipo de usuário:</label>
-      <select id="userType" name="userType">
-        <option value="cliente">Cliente</option>
-        <option value="administrador">Administrador</option>
-      </select>
+  <body>
+    <div class="cadastro">
+      <div class="imagem">
+        <i class="fa-regular fa-user icons-color"></i>
       </div>
 
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control name" id="name" name="name">
-      </div>
-      <div class="form-group">
-        <label for="email">Email Adress</label>
-        <input type="email" class="form-control email" id="email" name="email">
-      </div>
+      <p>Cadastre-se aqui</p>
 
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control password" id="password" name="password">
-      </div>
+      <form class="fazer-cadastro" action="/auth/register" method="POST">
 
-      <div class="form-group">
-        <label for="passwordConfirm">Confirm Password</label>
-        <input type="password" class="form-control password" id="passwordConfirm" name="passwordConfirm">
-      </div>
+        <div class="form-group">
+          <label for="userType">Tipo de usuário:</label>
+          <select id="userType" name="userType">
+            <option value="cliente">Cliente</option>
+            <option value="administrador">Administrador</option>
+          </select>
+        </div>
 
-       <button type="submit" class="btn btn-primary button-cadastrar">Register</button>
-                
-      <a href="/login">
-        <p class="complement">Já é cadastrado?</p>
-      </a>
-    </form>
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input type="text" class="form-control name" id="name" name="name" />
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            class="form-control email"
+            id="email"
+            name="email"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input
+            type="password"
+            class="form-control password"
+            id="password"
+            name="password"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="passwordConfirm">Confirme a senha</label>
+          <input
+            type="password"
+            class="form-control password"
+            id="passwordConfirm"
+            name="passwordConfirm"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary button-cadastrar"
+        >Cadastrar</button>
+
+        <a href="/login">
+          <p class="complement">Já é cadastrado?</p>
+        </a>
+      </form>
 
       {{#if message}}
         <h4 class="alert alert-danger mt4">{{message}}</h4>
-        {{/if}}
-  </div>
+      {{/if}}
+    </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"
+    ></script>
 
-  <script src="../fontawesome/js/all.min.js"></script>
-</body>
+    <script src="../fontawesome/js/all.min.js"></script>
+  </body>
 
 </html>

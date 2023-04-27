@@ -28,11 +28,15 @@ body {
   gap: 20px; /* novo */
 }
 
-
 /* Logo styles */
 
 .imagem {
   margin-bottom: 10px;
+}
+
+.icons-color {
+  color: #1ebcbf;
+  font-size: 70px;
 }
 
 /* Form styles */
