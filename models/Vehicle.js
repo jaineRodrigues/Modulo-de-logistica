@@ -37,4 +37,5 @@ const Vehicle = sequelize.define('veiculo', {
     timestamps: false // desativa as colunas createdAt e updatedAt
 });
 
+
 module.exports = Vehicle;

@@ -28,4 +28,5 @@ const User = sequelize.define('usuarios', {
   timestamps: false // desativa as colunas createdAt e updatedAt
 });
 
+
 module.exports = User;
