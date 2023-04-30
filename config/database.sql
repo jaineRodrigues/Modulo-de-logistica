@@ -39,7 +39,7 @@ USE mysql;
 SELECT user, Host, plugin FROM mysql.user;
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pgadmin';
 
-CREATE TABLE veiculo (
+CREATE TABLE veiculos (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   marca VARCHAR(255) NOT NULL,
   modelo VARCHAR(255) NOT NULL,

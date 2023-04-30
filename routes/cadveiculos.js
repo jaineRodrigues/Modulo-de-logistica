@@ -1,5 +1,5 @@
 const express = require('express');
-const vehicleController = require('../controllers/cadveiculos');
+const vehicleController = require('../controllers/veiculosController');
 const router = express.Router();
 
 router.post('/register', vehicleController.register )
