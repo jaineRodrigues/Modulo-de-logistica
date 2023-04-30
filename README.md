@@ -14,7 +14,7 @@ Este é o módulo de logística do IF Sistemas, uma empresa de produção e come
 
  ## Tecnologias utilizadas
  - Front-end: HTML, CSS, Javascript e a biblioteca Handlebars para templates;
- - back-end: Node.js, Express.js e MySQL para o banco de dados.
+ - back-end: Node.js, Express.js, Sequilize e MySQL para o banco de dados.
 
  ## Como executar o projeto
 - Clone o repositório em sua máquina local;
