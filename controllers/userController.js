@@ -62,7 +62,6 @@ exports.register = async (req, res) => {
   }
 };
 
-
 ///LOGIN
 exports.login = async (req, res) => {
   console.log(req.body);
@@ -74,7 +73,6 @@ exports.login = async (req, res) => {
     });
   }
   
-
   try {
     const user = await User.findOne({ where: { email: email } });
 
