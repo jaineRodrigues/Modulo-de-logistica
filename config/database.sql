@@ -16,8 +16,10 @@ CREATE TABLE condutores (
     id INT NOT NULL AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL,
     telefone VARCHAR(20) NOT NULL,
-    cpf VARCHAR(11) NOT NULL,
-    cnh VARCHAR(20) NOT NULL,
+    cpf VARCHAR(20) NOT NULL,
+    cnh VARCHAR(25) NOT NULL,
+    categoria VARCHAR(5) NOT NULL,
+    validade DATE NOT NULL,
     PRIMARY KEY (id)
 );
 

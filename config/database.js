@@ -18,6 +18,15 @@ const sequelize = new Sequelize(
   } catch (error) {
     console.error('Não foi possível se conectar ao banco de dados:', error);
   }
+
+  try {
+    await sequelize.sync({ alter: true });
+    console.log('Tabelas criadas com sucesso.');
+  }
+  catch (error) {
+    console.error('Não foi possível criar as tabelas:', error);
+  }
+
 })();
 
 module.exports = sequelize;

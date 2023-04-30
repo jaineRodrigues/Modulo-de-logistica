@@ -28,10 +28,13 @@ app.set('view engine', 'handlebars');
 
 
 
+
+
 // Rotas
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/userRoutes'));
-app.use('/cadveiculos', require('./routes/cadveiculos'));
+app.use('/cadveiculos', require('./routes/vehicleRoutes'));
+app.use('/cadcondutores', require('./routes/driverRoutes'));
 const router = require("./routes/pages");
 
 const db = require('./config/database');
