@@ -48,3 +48,5 @@ CREATE TABLE veiculo (
   dataCompra DATE NOT NULL,
   dataVencimento DATE NOT NULL
 );
+
+
