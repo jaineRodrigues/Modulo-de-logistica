@@ -26,4 +26,9 @@ router.get('/cadveiculos', (req, res) => {
     res.render('cadveiculos');
 })
 
+router.get('/cadcondutores', (req, res) => {
+    res.render('cadcondutores');
+})
+
+
 module.exports = router;

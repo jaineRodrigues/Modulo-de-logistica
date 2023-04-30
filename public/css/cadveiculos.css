@@ -97,6 +97,25 @@ label {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+option {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+
 .cadastro button {
   background-color: #5EA3E3;
   color: white;
