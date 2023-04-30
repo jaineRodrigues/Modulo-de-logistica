@@ -366,3 +366,41 @@ body {
     padding: 2rem;
   }
 }
+
+/*Painel de usuario*/
+
+
+/* Menu lateral esquerdo */
+
+aside {
+  background-color: #f2f2f2;
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Seção principal */
+
+main {
+  margin-left: 200px;
+  padding: 20px;
+}
+
+/* Estilo para botões */
+
+button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
