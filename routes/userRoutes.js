@@ -6,7 +6,6 @@ router.get('/', (req, res) => {
     res.render('index');
 })
 
-
 router.get('/register', userController.register)
 router.post('/register', userController.register);
 
