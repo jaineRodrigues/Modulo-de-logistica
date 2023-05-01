@@ -3,7 +3,7 @@
 <br>
  <h2>Status do Projeto: Em desenvolvimento:warning: </h2>
 <br>
-Este é o módulo de logística do IF Sistemas, uma empresa de produção e comercialização de computadores. Este sistema esta sendo desenvolvido pelos alunos do Instituto Federal de Educação, Ciência e Tecnologia da Bahia. Este módulo é responsável por gerenciar as operações logísticas do IF sistemas que, inclui a gestão de frotas, viagens e distribuição, e é responsável por garantir a agilidade e segurança no processo de transporte dos produtos, desde a saída da fábrica até a entrega ao cliente final.
+Este é o módulo de logística do IF Sistemas (empresa fictícia para fins acadêmicos), uma empresa de produção e comercialização de computadores. Este sistema esta sendo desenvolvido pelos alunos do Instituto Federal de Educação, Ciência e Tecnologia da Bahia. Este módulo é responsável por gerenciar as operações logísticas do IF sistemas que, inclui a gestão de frotas, viagens e distribuição, e é responsável por garantir a agilidade e segurança no processo de transporte dos produtos, desde a saída da fábrica até a entrega ao cliente final.
 
 ## Funcionalidades
  - Cadastrar usuario cliente e administrador,
