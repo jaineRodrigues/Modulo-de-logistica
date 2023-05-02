@@ -1,0 +1,68 @@
+.admin {
+    margin: 100px;
+  }
+
+.rodape {
+    background: var(--black);
+    text-align: center;
+  }
+  
+  .rodape .redes {
+    padding: 1rem 0;
+  }
+  
+  .rodape .redes a {
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color: #fff;
+    border: var(--border);
+    margin: 0.3rem;
+    border-radius: 50%;
+  }
+  
+  .rodape .redes a:hover {
+    background-color: var(--main-color);
+  }
+  
+  .rodape .credito {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: lighter;
+    padding: 1.5rem;
+  }
+  
+  .rodape .credito span {
+    color: var(--main-color);
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #212129;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .user-custom {
+    color: #fafafa;
+    font-size: 17px;
+  }
+  
+  .name-user {
+    font-size: 9px;
+    color: #858993;
+  }
+  
