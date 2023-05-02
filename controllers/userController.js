@@ -98,7 +98,10 @@ exports.login = async (req, res) => {
     res.cookie("jwt", token, { httpOnly: true, maxAge: expiresIn });
 
     if (user.userType === 'cliente') {
-      return res.redirect('/clientPanel');
+      return res.render("clientPanel", {
+        name: user.name,
+        email: user.email
+      });
     } else if (user.userType === 'admin') {
       return res.redirect('/adminPanel');
     } else {
@@ -106,6 +109,7 @@ exports.login = async (req, res) => {
         message: "Tipo de usuário inválido",
       });
     }
+
 
   } catch (error) {
     console.log(error);
