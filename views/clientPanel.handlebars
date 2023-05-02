@@ -1,40 +1,67 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página do usuario</title>
+    <title>Página do usuário</title>
 
     <!-- Link do font awesome  -->
     <link rel="stylesheet" href="../fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="/css/homepage.css" />
-
+    <link rel="stylesheet" href="/css/client-panel.css">
 </head>
-<body>
 
+<body>
     <header class="cabeçalho">
         <a href="#" class="logo">
             <img src="/img/logo.jpg" alt="logo do sistema" />
         </a>
 
         <nav class="navbar">
-            <a href="/">Início</a>
-            <a href="#">Minha conta </a>
-            <a href="#">Dados pessoais</a>
-            <a href="#">Sair</a>
-            <i class="fa-solid fa-circle-user user-custom"></i></a>
-
+            <a href="#">9999 999999</a>
+            <a href="#">logistica@email.com</a>
+            <a href="/">Voltar</a>
+            <!--<i class="fa-solid fa-circle-user user-custom"></i></a>-->
         </nav>
 
         <div class="icons">
             <div class="fas fa-bars" id="menu-btn"></div>
         </div>
+    </header>
 
+    <div class="container">
+        <div class="usuario-container">
 
-        <!--<h1>Bem-vindo(a) ao painel de cliente, {{name}}!</h1>
-  <p>Seu e-mail é {{ email }}.</p>-->
+            <div id="conta">
+                <h3><a href="#"> <i class="fa fa-lock" aria-hidden="true"></i> Dados de
+                        acesso</a></h3><br>
 
+                <h3><a href="#" target="_self"> <i class=" fa fa-address-book" aria-hidden="true"></i>Dados
+                        pessoal</a></h3>
+            </div>
+
+            <div id="gestao-de-dados">
+                <img src="/img/user.png" alt="icone de usuário">
+                <p><strong>{{name}}</strong></p>
+                <p>{{email}}</p><br><br>
+
+                <a href="#"><button class="botao">alterar e-mail</button></a><br><br>
+                <a href="#"><button class="botao">alterar senha</button></a>
+            </div>
+        </div>
+    </div>
+    <section class="rodape" id="Contato">
+
+        <div class="redes">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+        </div>
+        <div class="credito"> <span>@IF sistema</span></div>
+    </section>
+
+    <script src="/js/homepage.js"></script>
+    <script src="https://kit.fontawesome.com/560011bd3e.js" crossorigin="anonymous"></script>
 </body>
-
-</html>
