@@ -116,3 +116,53 @@ exports.login = async (req, res) => {
     });
   }
 };
+
+
+// recuperar senha 
+exports.changePassword = async (req, res) => {
+  console.log(req.body);
+  const { name, cpf, telefone, email } = req.body;
+
+  if (!name || !cpf || !telefone || !email) {
+    return res.render("login", {
+      message: "Por favor preencha todos os campos",
+    });
+  }
+
+  // Verifica se o email fornecido é válido
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res.render("login", {
+      message: "Por favor insira um email válido",
+    });
+  }
+
+  try {
+    const userExists = await User.findOne({ where: { email: email } });
+
+    if (!userExists) {
+      return res.render("login", {
+        message: "Usuário não encontrado",
+      });
+    }
+
+    /*if (userExists.name !== name || userExists.cpf !== cpf || userExists.telefone !== telefone) {
+      return res.render("login", {
+        message: "Dados incorretos",
+      });
+    } */
+
+    // manda email com a nova senha 
+
+    return res.render("login", {
+      message: "Usuário encontrado",
+      email: email
+    });
+
+  } catch (error) {
+    console.log(error);
+    return res.render("login", {
+      message: "Algo deu errado, por favor tente novamente.",
+    });
+  }
+};
