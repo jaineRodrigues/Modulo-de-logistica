@@ -27,6 +27,10 @@ app.use(express.static(publicDirectory));
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
+app.use((req, res, next) => {
+  res.locals.user = req.user || null;
+  next()
+})
 
 // Rotas
 app.use('/', require('./routes/pages'));
@@ -37,6 +41,9 @@ app.use('/cadcondutores', require('./routes/driverRoutes'));
 const router = require("./routes/pages");
 
 const db = require('./config/database');
+
+//Middleware global
+ 
 
 const port = process.env.PORT || 3000;
 
