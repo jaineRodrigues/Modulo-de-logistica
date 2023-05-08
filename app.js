@@ -6,6 +6,7 @@ const mysql = require('mysql');
 const dotenv = require('dotenv');
 const path = require("path");
 const cookieParser = require('cookie-parser');
+const User = require('./models/User');
 
 dotenv.config({ path: './.env' });
 
@@ -27,20 +28,15 @@ app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 
-
-
-
 // Rotas
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/userRoutes'));
 app.use('/cadveiculos', require('./routes/vehicleRoutes'));
 app.use('/cadcondutores', require('./routes/driverRoutes'));
+//app.use('/forgotPassword', require('./routes/forgotPassword'));
 const router = require("./routes/pages");
 
 const db = require('./config/database');
-
-// Configurações do express e rotas
-
 
 const port = process.env.PORT || 3000;
 
