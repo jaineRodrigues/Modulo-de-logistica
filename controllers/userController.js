@@ -13,8 +13,7 @@ exports.register = async (req, res) => {
       message: "Por favor preencha todos os campos",
     });
   }
-
-
+  
   // Verifica se o email fornecido é válido
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
@@ -109,7 +108,6 @@ exports.login = async (req, res) => {
         message: "Tipo de usuário inválido",
       });
     }
-
 
   } catch (error) {
     console.log(error);
