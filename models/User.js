@@ -7,6 +7,10 @@ const User = sequelize.define('usuarios', {
     primaryKey: true,
     autoIncrement: true
   },
+  userType: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
   name: {
     type: DataTypes.STRING,
     allowNull: true
@@ -26,10 +30,6 @@ const User = sequelize.define('usuarios', {
     allowNull: true
   },
   password: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  userType: {
     type: DataTypes.STRING,
     allowNull: false
   }
