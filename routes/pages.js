@@ -33,7 +33,9 @@ router.get('/cadcondutores', (req, res) => {
 router.get('/personalData', authMiddleware, (req, res) => {
     res.render('personalData', { 
       name: res.locals.user.name, 
-      email: res.locals.user.email 
+      email: res.locals.user.email ,
+      telefone: res.locals.user.telefone,
+      cpf: res.locals.user.cpf
     });
   });
   
