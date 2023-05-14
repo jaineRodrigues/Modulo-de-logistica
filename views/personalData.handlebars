@@ -10,7 +10,7 @@
     <!-- Link do font awesome  -->
     <link rel="stylesheet" href="../fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="/css/homepage.css" />
-    <link rel="stylesheet" href="/css/client-panel.css">
+    <link rel="stylesheet" href="/css/personalData.css">
 </head>
 
 <body>
@@ -19,13 +19,6 @@
             <img src="/img/logo.jpg" alt="logo do sistema" />
         </a>
 
-        <nav class="navbar">
-            <a href="#">9999 999999</a>
-            <a href="#">logistica@email.com</a>
-            <a href="/">Voltar</a>
-            <!--<i class="fa-solid fa-circle-user user-custom"></i></a>-->
-        </nav>
-
         <div class="icons">
             <div class="fas fa-bars" id="menu-btn"></div>
         </div>
@@ -33,25 +26,26 @@
 
     <div class="container">
         <div class="usuario-container">
-
-            <div class="conta">
-                <h3><a href="#"> <i class="fa fa-lock" aria-hidden="true"></i> Dados de
-                        acesso</a></h3><br>
-
-                <h3><a href="#" target="_self"> <i class=" fa fa-address-book" aria-hidden="true"></i>Dados
-                        pessoal</a></h3>
-            </div>
+            <a href="./clientPanel" class="back"><i class="fa-sharp fa-solid fa-xmark"></i></a>
 
             <div class="gestao-de-dados">
-                <img src="/img/user.png" alt="icone de usuário">
-                <p><strong>Nome de usuário: {{ name }}</strong><p>
-                <p><strong>Email: {{ email }}</strong><p><br>
+                <h2>Gestão de Dados Pessoais</h1>
 
-                <a href="#"><button class="botao">alterar e-mail</button></a><br><br>
-                <a href="#"><button class="botao">alterar senha</button></a>
+                    <form action="/atualizar_dados" method="POST">
+                        <label for="nome">Nome:</label>
+                        <input type="text" value="{{ name }}" name="nome" required>
+                        <label for="email">E-mail:</label>
+                        <input type="email" value="{{ email }}" name="email" required>
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" value="{{ telefone }}" name="telefone" required>
+                        <label for="telefone">Cpf:</label>
+                        <input type="tel" value="{{ cpf }}" name="cpf" required>
+                        <button type="submit" class="botao">Atualizar dados</button>
+                    </form>
             </div>
         </div>
     </div>
+
     <section class="rodape" id="Contato">
 
         <div class="redes">
