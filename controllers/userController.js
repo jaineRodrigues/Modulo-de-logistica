@@ -6,7 +6,7 @@ const sequelize = require('../config/database');
 //USER REGISTER
 exports.register = async (req, res) => {
   console.log(req.body);
-  const { name, email, password, passwordConfirm, userType } = req.body;
+  const { userType, name, email, cpf, telefone, password, passwordConfirm } = req.body;
 
   if (!name || !email || !password || !passwordConfirm || !userType) {
     return res.render("register", {
@@ -41,10 +41,13 @@ exports.register = async (req, res) => {
     console.log(hashedPassword);
 
     const newUser = User.build({
+      userType: userType,
       name: name,
       email: email,
+      cpf: cpf,
+      telefone: telefone,
       password: hashedPassword,
-      userType: userType
+     
     });
 
     await newUser.save();
