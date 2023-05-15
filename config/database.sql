@@ -9,6 +9,8 @@ CREATE TABLE usuarios (
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
   userType VARCHAR(255) DEFAULT 'usuario'
+  telefone VARCHAR(20) NOT NULL,
+  cpf VARCHAR(11) NOT NULL;
 );
 
 -- Cadastro de condutores --
