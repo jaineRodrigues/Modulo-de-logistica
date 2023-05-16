@@ -40,4 +40,8 @@ router.get('/personalData', authMiddleware, (req, res) => {
     });
 });
 
+router.get('/changePassword', (req,res) =>{
+    res.render('changePassword', { title: 'Recuperar senha'});
+})
+
 module.exports = router;
