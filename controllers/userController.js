@@ -2,6 +2,8 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const sequelize = require('../config/database');
+const sendEmail = require('../utils/sendEmail');
+const nodemailer = require("nodemailer");
 
 //USER REGISTER
 exports.register = async (req, res) => {
@@ -127,7 +129,8 @@ exports.changePassword = async (req, res) => {
   const { name, cpf, telefone, email } = req.body;
 
   if (!name || !cpf || !telefone || !email) {
-    return res.render("login", {
+    return res.render("changePassword", {
+      title: 'Recuperar senha',
       message: "Por favor preencha todos os campos",
     });
   }
@@ -135,7 +138,8 @@ exports.changePassword = async (req, res) => {
   // Verifica se o email fornecido é válido
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
-    return res.render("login", {
+    return res.render("changePassword", {
+      title: 'Recuperar senha',
       message: "Por favor insira um email válido",
     });
   }
@@ -144,27 +148,60 @@ exports.changePassword = async (req, res) => {
     const userExists = await User.findOne({ where: { email: email } });
 
     if (!userExists) {
-      return res.render("login", {
+      return res.render("changePassword", {
+        title: 'Recuperar senha',
         message: "Usuário não encontrado",
       });
     }
 
-    /*if (userExists.name !== name || userExists.cpf !== cpf || userExists.telefone !== telefone) {
-      return res.render("login", {
+    if (userExists.name !== name || userExists.cpf !== cpf || userExists.telefone !== telefone) {
+      return res.render("changePassword", {
+        title: 'Recuperar senha',
         message: "Dados incorretos",
       });
-    } */
+    } 
 
     // manda email com a nova senha 
 
-    return res.render("login", {
-      message: "Usuário encontrado",
-      email: email
-    });
+    const newPassword = Math.random().toString(15).slice(-8);
+    console.log(newPassword);
+    let hashedPassword = await bcrypt.hash(newPassword, 8);
+
+    const user = await User.update({ password: hashedPassword }, { where: { email: email } });
+
+    const message = `
+      <h1>Olá ${userExists.name}!</h1>
+      <p>Recebemos uma solicitação de alteração de senha para sua conta.</p>
+      <p>Sua nova senha é: ${newPassword}</p>
+      <p>Por favor, faça login com sua nova senha e altere-a para uma de sua preferência.</p>
+      <p>Atenciosamente, equipe do Sistema de Modulo de Logistica.</p>
+    `;
+    try {
+      let info = await sendEmail({
+        email: userExists.email,
+        subject: 'Alteração de senha',
+        html: message
+      });
+
+      console.log("Message sent: %s", info.messageId);
+      console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+
+      return res.render("changePassword", {
+        title: 'Recuperar senha',
+        message: "Email enviado com sucesso",
+      });
+    } catch (error) {
+      console.log(error);
+      return res.render("changePassword", {
+        title: 'Recuperar senha',
+        message: "Algo deu errado, por favor tente novamente.",
+      });
+    }
 
   } catch (error) {
     console.log(error);
-    return res.render("login", {
+    return res.render("changePassword", {
+      title: 'Recuperar senha',
       message: "Algo deu errado, por favor tente novamente.",
     });
   }

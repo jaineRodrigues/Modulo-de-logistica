@@ -1,66 +1,49 @@
 <html lang="pt-br">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+  <link href="/css/login.css" rel="stylesheet" />
+  <title>{{title}}</title>
+</head>
 
-    <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
-
-    <link href="/css/login.css" rel="stylesheet" />
-    <title>Tela de Login</title>
-  </head>
-
-  <body>
-    <div class="login">
-      <div class="imagem">
-        <i class="fa-solid fa-key icons-color"></i>
-      </div>
-
-      <div class="container">
-        <p>Seja bem-vindo(a)!</p>
-        <form action="/auth/login" method="POST">
-          <div class="form-group">
-            <label for="email">E-mail</label>
-            <input
-              type="email"
-              class="form-control email"
-              id="email"
-              name="email"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="password">Senha</label>
-            <input
-              type="password"
-              class="form-control password"
-              id="password"
-              name="password"
-            />
-          </div>
-
-          <button
-            type="submit"
-            class="btn btn-primary button-entrar"
-          >Login</button>
-
-          <a href="./recuperarsenha.html">
-            <p class="complement">Esqueci minha senha</p>
-          </a>
-        </form>
-      </div>
-      {{#if message}}
-        <h4 class="alert alert-danger mt4">{{message}}</h4>
-      {{/if}}
-
+<body>
+  <div class="login">
+    <div class="imagem">
+      <i class="fa-solid fa-key icons-color"></i>
     </div>
 
-    <script src="../fontawesome/js/all.min.js"></script>
-  </body>
+    <div class="container">
+      <p>Seja bem-vindo(a)!</p>
+      <form action="/auth/login" method="POST">
+        <div class="form-group">
+          <label for="email">Email Adress</label>
+          <input type="email" class="form-control email" id="email" name="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control password" id="password" name="password" />
+        </div>
+
+        <button type="submit" class="btn btn-primary button-entrar">Login</button>
+
+        <a href="../changePassword">
+          <p class="complement">Esqueci minha senha</p>
+        </a>
+      </form>
+    </div>
+    {{#if message}}
+    <h4 class="alert alert-danger mt4">{{message}}</h4>
+    {{/if}}
+
+  </div>
+
+  <script src="../fontawesome/js/all.min.js"></script>
+</body>
 
 </html>
