@@ -1,49 +1,73 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{title}}</title>
-  <link rel="stylesheet" href="../css/cadveiculos.css">
-</head>
-<body>
-  <header>
-    <img src="../img/logo.jpg" alt="Logo">
-  </header>
+<html>
 
-  <div class="cadastro">
-    <h2>Cadastro de Veículos</h2>
-    {{#if message}}
-      <p>{{message}}</p>
-    {{/if}}
-    <form action="/cadveiculos/register" method="POST">
-      <div>
-        <label for="marca">Marca:</label>
-        <input type="text" id="marca" name="marca">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/personalData.css" />
+    <link rel="stylesheet" href="/css/homepage.css" />
+  </head>
+
+  <body>
+    <header class="cabeçalho">
+      <a href="#" class="logo">
+        <img src="/img/logo.jpg" alt="logo do sistema" />
+      </a>
+      <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
       </div>
-      <div>
-        <label for="modelo">Modelo:</label>
-        <input type="text" id="modelo" name="modelo">
+
+      <div class="search-form">
+        <input type="text" id="search-box" placeholder="search here..." />
+        <label for="search-box" class="fas fa-search"></label>
       </div>
-      <div>
-        <label for="renavam">Renavam:</label>
-        <input type="text" id="renavam" name="renavam">
+    </header>
+
+    <div class="container tela-extensa">
+      <div class="usuario-container">
+        <div class="gestao-de-dados">
+          <h2>Cadastro de Veículos</h2><br /><br />
+          {{#if message}}
+            <p>{{message}}</p>
+          {{/if}}
+          <form action="/cadveiculos/register" method="POST">
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" name="marca" />
+
+            <label for="modelo">Modelo:</label>
+            <input type="text" id="modelo" name="modelo" />
+
+            <label for="renavam">Renavam:</label>
+            <input type="text" id="renavam" name="renavam" />
+
+            <label for="placa">Placa:</label>
+            <input type="text" id="placa" name="placa" />
+
+            <label for="telefone">Data de Compra:</label>
+            <input type="date" id="dataCompra" name="dataCompra" />
+
+            <label for="dataVencimento">Data de Vencimento:</label>
+            <input type="date" id="dataVencimento" name="dataVencimento" />
+
+            <button type="submit" class="botao">Cadastrar</button>
+          </form>
+        </div>
       </div>
-      <div>
-        <label for="placa">Placa:</label>
-        <input type="text" id="placa" name="placa">
+    </div>
+
+    <section class="rodape" id="Contato">
+      <div class="redes">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
       </div>
-      <div>
-        <label for="dataCompra">Data de Compra:</label>
-        <input type="date" id="dataCompra" name="dataCompra">
-      </div>
-      <div>
-        <label for="dataVencimento">Data de Vencimento:</label>
-        <input type="date" id="dataVencimento" name="dataVencimento">
-      </div>
-      <button type="submit">Cadastrar</button>
-    </form>
-  </div>
-</body>
+      <div class="credito"> <span>@IF sistema</span></div>
+    </section>
+
+    <script src="/js/homepage.js"></script>
+    <script
+      src="https://kit.fontawesome.com/560011bd3e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+
 </html>
