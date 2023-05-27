@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/homepage.css" />
+    <link rel="stylesheet" href="/css/serviceRegistration.css">
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css" />
+    <title>{{title}}</title>
+</head>
+
+<body>
+    <header class="cabeçalho">
+        <a href="#" class="logo">
+            <img src="/img/logo.jpg" alt="logo do sistema">
+        </a>
+    </header>
+    <div class="service-registration">
+        <div class="imagem">
+            <i class="fa-solid fa-tools icons-color"></i>
+        </div>
+        {{#if message}}
+        <p>{{message}}</p>
+        {{/if}}
+        <p>Registro de Serviços</p>
+        <form class="fazer-registro" action="/serviceRegistration/serviceRegistration" method="POST">
+            <label for="veiculo">
+                <select name="veiculo" id="veiculo" required="required">
+                    <option value="">Selecione o veículo</option>
+                    {{#each vehicles}}
+                    <option value="{{this.dataValues.placa}}">
+                        Placa: {{this.dataValues.placa}}
+                    </option>
+                    {{/each}}
+                </select>
+            </label>
+
+            <label for="tipo">
+                <select name="tipo" id="tipo" required="required">
+                    <option value="">Selecione o tipo de serviço</option>
+                    <option value="manutencao_periodica">Manutenção Periódica</option>
+                    <option value="reparo">Reparo</option>
+                    <option value="troca_oleo">Troca de Óleo</option>
+                    <option value="abastecimento">Abastecimento</option>
+                </select>
+            </label>
+            <label for="descricao">
+                <textarea name="descricao" id="descricao" required="required"
+                    placeholder="Descrição do serviço"></textarea>
+            </label>
+            <label for="dataServico">
+                <input class="data" type="date" name="dataServico" required="required" placeholder="Data do Serviço"
+                    onkeypress="$(this).mask('00/00/0000');" />
+            </label>
+            <button class="button-registrar" type="submit">
+                <h1>Registrar</h1>
+            </button>
+        </form>
+
+    </div>
+
+
+    <section class="rodape" id="Contato">
+
+        <div class="redes">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+        </div>
+        <div class="credito"> <span>@IF sistema</span></div>
+
+    </section>
+
+    <script src="/js/homepage.js"></script>
+    <script src="https://kit.fontawesome.com/560011bd3e.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
