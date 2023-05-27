@@ -1,0 +1,67 @@
+.service-registration {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--main-color);
+}
+
+.service-registration p {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 18px;
+    padding: 2%;
+    color: #333;
+}
+
+
+.imagem {
+    font-size: 60px;
+    color: #333;
+}
+
+.fazer-registro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fazer-registro select,
+.fazer-registro textarea,
+.fazer-registro input {
+    width: 100%;
+    min-width: 800px;
+    height: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.button-registrar {
+    background-color: var(--bg);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 3px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    margin-top: 2em;
+}
+
+.button-registrar h1 {
+    margin: 3px 2px;
+    font-size: 18px;
+}
