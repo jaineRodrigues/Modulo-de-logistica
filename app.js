@@ -37,8 +37,9 @@ app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/userRoutes'));
 app.use('/cadveiculos', require('./routes/vehicleRoutes'));
 app.use('/cadcondutores', require('./routes/driverRoutes'));
+app.use('/serviceRegistration', require('./routes/serviceRoutes'));
 //app.use('/forgotPassword', require('./routes/forgotPassword'));
-const router = require("./routes/pages");
+//const router = require("./routes/pages");
 
 const db = require('./config/database');
 
