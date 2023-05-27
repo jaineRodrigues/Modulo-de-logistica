@@ -53,4 +53,11 @@ CREATE TABLE veiculos (
   dataVencimento DATE NOT NULL
 );
 
-
+-- Registro de serviços --
+CREATE TABLE Services (
+  id INT  AUTO_INCREMENT PRIMARY KEY,
+  veiculo VARCHAR(255) NOT NULL,
+  tipo VARCHAR(255) NOT NULL,
+  descricao TEXT NOT NULL,
+  dataServico DATE NOT NULL,
+);
