@@ -103,8 +103,6 @@ exports.login = async (req, res) => {
 
     if (user.userType === 'cliente') {
       return res.render("clientPanel", {
-        name: user.name,
-        email: user.email
       });
     } else if (user.userType === 'admin') {
       return res.redirect('/adminPanel');

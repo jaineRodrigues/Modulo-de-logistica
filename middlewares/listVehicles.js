@@ -10,7 +10,6 @@ const listVehicles = async (req, res, next) => {
     next();
   } catch (error) {
     console.log(error);
-    // Lida com erros caso ocorra algum problema na busca dos veículos
     return res.render("cadveiculos", {
       message: "Algo deu errado, por favor tente novamente.",
     });
