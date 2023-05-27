@@ -30,6 +30,10 @@ router.get('/cadcondutores', (req, res) => {
     res.render('cadcondutores', { title: 'Cadastrar Condutores' });
 })
 
+router.get('/cadtransportadora', (req, res) => {
+    res.render('cadtransportadora', { title: 'Cadastrar Transportadora' });
+})
+
 router.get('/personalData', authMiddleware, (req, res) => {
     res.render('personalData', {
         title: 'Dados Pessoais',
