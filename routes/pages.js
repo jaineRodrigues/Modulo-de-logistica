@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { authMiddleware } = require('../middlewares/authMiddleware');
+const { listVehicles } = require('../middlewares/listVehicles');
 
 router.get('/', (req, res) => {
     res.render('index', { title: 'Página Inicial' });
@@ -14,16 +15,26 @@ router.get('/login', (req, res) => {
     res.render('login', { title: 'Login' });
 })
 
-router.get('/clientPanel', (req, res) => {
-    res.render('clientPanel',{ title: 'Painel do Cliente' });
+router.get('/clientPanel', authMiddleware, (req, res) => {
+    res.render('clientPanel', {
+    title: 'Painel do Cliente' ,
+    name: res.locals.user.name,
+    email: res.locals.user.email,
+    telefone: res.locals.user.telefone,
+    cpf: res.locals.user.cpf
+});
 })
 
-router.get('/adminPanel', (req, res) => {
-    res.render('adminPanel', { title: 'Painel do Administrador' });
+router.get('/adminPanel', authMiddleware, (req, res) => {
+    res.render('adminPanel', { title: 'Painel do Administrador' ,
+    name: res.locals.user.name,
+});
 })
 
-router.get('/cadveiculos', (req, res) => {
-    res.render('cadveiculos', { title: 'Cadastrar Veículos' });
+router.get('/cadveiculos',  (req, res) => {
+    res.render('cadveiculos', { 
+        title: 'Cadastrar Veículos',
+    });
 })
 
 router.get('/cadcondutores', (req, res) => {
@@ -43,5 +54,13 @@ router.get('/personalData', authMiddleware, (req, res) => {
 router.get('/changePassword', (req,res) =>{
     res.render('changePassword', { title: 'Recuperar senha'});
 })
+
+router.get('/serviceRegistration', listVehicles, (req, res) => {
+    res.render('serviceRegistration', { 
+        title: 'Registro de Serviços',
+        vehicles: res.locals.vehicles,
+    });
+});
+
 
 module.exports = router;
