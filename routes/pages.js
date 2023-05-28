@@ -31,17 +31,17 @@ router.get('/adminPanel', authMiddleware, (req, res) => {
 });
 })
 
-router.get('/cadveiculos',  (req, res) => {
+router.get('/cadveiculos',authMiddleware,  (req, res) => {
     res.render('cadveiculos', { 
         title: 'Cadastrar Veículos',
     });
 })
 
-router.get('/cadcondutores', (req, res) => {
+router.get('/cadcondutores',authMiddleware, (req, res) => {
     res.render('cadcondutores', { title: 'Cadastrar Condutores' });
 })
 
-router.get('/cadtransportadora', (req, res) => {
+router.get('/cadtransportadora',authMiddleware, (req, res) => {
     res.render('cadtransportadora', { title: 'Cadastrar Transportadora' });
 })
 
@@ -66,5 +66,9 @@ router.get('/serviceRegistration', listVehicles, (req, res) => {
     });
 });
 
+router.get('/logout',authMiddleware, (req, res) => {
+    res.cookie("jwt", "", { maxAge: 1 });
+    res.redirect("/login");
+})
 
 module.exports = router;
