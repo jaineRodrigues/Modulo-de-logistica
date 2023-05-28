@@ -20,7 +20,8 @@ const sequelize = new Sequelize(
   }
 
   try {
-    await sequelize.sync({ alter: true });
+    await sequelize.sync();
+    await sequelize.sync({ alter: true});
     console.log('Tabelas criadas com sucesso.');
   }
   catch (error) {
