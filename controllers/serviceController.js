@@ -10,7 +10,6 @@ exports.serviceRegistration = async (req, res) => {
     });
   }
   
-  
   try {
     const newService = Service.build({
       veiculo: veiculo,
