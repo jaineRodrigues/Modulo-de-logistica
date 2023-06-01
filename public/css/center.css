@@ -1,0 +1,165 @@
+.center-registration {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--main-color);
+}
+
+.center-registration p {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 18px;
+    padding: 2%;
+    color: #333;
+}
+
+
+.imagem {
+    font-size: 60px;
+    color: #333;
+}
+
+.center {
+    position: relative;
+    background: #1111117e;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.center:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.6;
+    background: url(../img/center.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position: 50% 0;
+}
+
+.center .texto {
+    max-width: 50rem;
+}
+
+.center .texto h3 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.fazer-registro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fazer-registro select,
+.fazer-registro textarea,
+.fazer-registro input {
+    width: 100%;
+    min-width: 800px;
+    height: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.fazer-registro label {
+    display: block;
+    text-align: left;
+    font-size: 17px;
+    color: #333;
+}
+
+.button-registrar {
+    background-color: var(--bg);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 3px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    margin-top: 2em;
+}
+
+.button-registrar h1 {
+    margin: 3px 2px;
+    font-size: 18px;
+}
+
+/*Tabela de listar  centros de distribuição*/
+.table-container {
+    width: 100%;
+    max-width: 950px;
+    margin-top: 4em;
+
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-container th,
+.table-container td {
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.table-container th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.table-container tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table-container tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table-container a {
+    color: #333;
+    text-decoration: none;
+}
+
+.table-container button {
+    background-color: var(--bg);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.table-container form {
+    display: inline;
+    margin-left: 5px;
+}
