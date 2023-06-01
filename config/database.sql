@@ -61,3 +61,26 @@ CREATE TABLE Services (
   descricao TEXT NOT NULL,
   dataServico DATE NOT NULL,
 );
+
+-- Centros de distribuição --
+CREATE TABLE centers (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(255) NOT NULL,
+  localizacao VARCHAR(255) NOT NULL,
+  estoque INT NOT NULL,
+  entregas INT NOT NULL,
+  createdAt DATETIME NOT NULL,
+  updatedAt DATETIME NOT NULL
+);
+
+CREATE TABLE Transportadora (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(255) NOT NULL,
+  razao VARCHAR(255) NOT NULL,
+  cnpj VARCHAR(255) NOT NULL,
+  telefone VARCHAR(20) NOT NULL,
+  cep VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  codade VARCHAR(255) NOT NULL,
+  logradouro VARCHAR(255) NOT NULL
+);
