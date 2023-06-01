@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/css/homepage.css" />
+  <link rel="stylesheet" href="/css/center.css">
+  <link rel="stylesheet" href="./fontawesome/css/all.min.css" />
+  <title>{{title}}</title>
+</head>
+
+<body>
+  <header class="cabeçalho">
+    <a href="#" class="logo">
+      <img src="/img/logo.jpg" alt="logo do sistema">
+    </a>
+  </header>
+
+  <div class="center-registration">
+    <div class="imagem">
+      <i class="fas fa-warehouse icons-color"></i>
+    </div>
+
+    <h1>Editar center de Distribuição</h1>
+    {{#if message}}
+    <p>{{message}}</p>
+    {{/if}}
+
+    <form class="fazer-registro" action="/editCenter//editCenter/{{id}}/edit" method="POST">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" value="{{center.nome}}" required>
+      <label for="localizacao">Localização:</label>
+      <input type="text" id="localizacao" name="localizacao" value="{{center.localizacao}}" required>
+      <label for="estoque">Estoque:</label>
+      <input type="text" id="estoque" name="estoque" value="{{centers.estoque}}" required>
+      <label for="entregas">Entregas:</label>
+      <input type="text" id="entregas" name="entregas" value="{{center.entregas}}" required>
+      <button type="submit">Editar Centro de Distribuição</button>
+    </form>
+  </div>
+
+  <section class="rodape" id="Contato">
+    <div class="redes">
+      <a href="#" class="fab fa-facebook-f"></a>
+      <a href="#" class="fab fa-instagram"></a>
+      <a href="#" class="fab fa-linkedin"></a>
+    </div>
+    <div class="credito"> <span>@IF sistema</span></div>
+  </section>
+
+  <script src="/js/homepage.js"></script>
+  <script src="https://kit.fontawesome.com/560011bd3e.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
