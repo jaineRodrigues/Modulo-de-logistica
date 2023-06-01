@@ -41,6 +41,13 @@
     font-size: 15px;
 }
 
+.fazer-registro label {
+    display: block;
+    text-align: left;
+    font-size: 17px;
+    color: #333;
+}
+
 .button-registrar {
     background-color: var(--bg);
     color: #fff;
