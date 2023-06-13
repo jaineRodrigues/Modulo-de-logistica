@@ -3,6 +3,7 @@ const router = express.Router();
 const { authMiddleware } = require('../middlewares/authMiddleware');
 const { listVehicles } = require('../middlewares/listVehicles');
 const { listCenters } = require('../middlewares/centerMiddleware');
+const { listTransportadora, getTransportadora } = require('../middlewares/trasportadoraMiddleware');
 
 router.get('/', (req, res) => {
     res.render('index', { title: 'Página Inicial' });
@@ -46,6 +47,28 @@ router.get('/cadcondutores', authMiddleware, (req, res) => {
 router.get('/cadtransportadora', authMiddleware, (req, res) => {
     res.render('cadtransportadora', { title: 'Cadastrar Transportadora' });
 })
+
+router.get('/transportadora', authMiddleware, listTransportadora, async(req, res) => {
+    console.log(res.locals.transportadoras)
+    res.render('transportadora', { title: 'Lista Transportadora', transportadoras: res.locals.transportadoras });
+})
+
+router.get('/transportadora/edit/:id', authMiddleware, listTransportadora, async(req, res) => {
+    const transportadoraID = req.params.id;
+    const transportadora = await getTransportadora(transportadoraID);
+    console.log(transportadora[0])
+    res.render('transportadora', {
+        title: 'Editar Transportadora',
+        editar: true,
+        transportadora: transportadora
+    });
+});
+
+router.get('/transportadora/edit/', authMiddleware, listTransportadora, async(req, res) => {
+    const transportadoras = await listTransportadora()
+    res.render('transportadora', { title: 'Editar Transportadora', editar: false, transportadoras: res.locals.transportadoras });
+});
+
 
 router.get('/personalData', authMiddleware, (req, res) => {
     res.render('personalData', {

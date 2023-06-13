@@ -1,0 +1,196 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/personalData.css" />
+    <link rel="stylesheet" href="/css/homepage.css" />
+    <link rel="stylesheet" href="/css/transportadora.css" />
+</head>
+
+<body>
+    <header class="cabeçalho">
+        <a href="#" class="logo">
+            <img src="/img/logo.jpg" alt="logo do sistema" />
+        </a>
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+
+        <nav class="navbar">
+            <a href="./adminPanel">Início</a>
+            <a href="./cadtransportadora">Cadastrar transportadora</a>
+            <i class="fa-solid fa-circle-user user-custom"></i></a>
+            <a href="./logout">Sair</a>
+
+        </nav>
+    </header>
+
+    {{#if message}}
+    <div class="container">
+        <div class="usuario-container">
+            <div class="gestao-de-dados">
+                <h2>{{message}}</h2><br /><br />
+                <a href="/transportadora" class="botao">Voltar</a>
+            </div>
+        </div>
+    </div>
+    {{else if editar}}
+    <div class="container tela-extensa">
+        <div class="usuario-container">
+            <div class="gestao-de-dados">
+                <div class="container tela-extensa">
+                    <div class="usuario-container">
+                        <div class="gestao-de-dados">
+                            <h2>Editar Transportadora</h2><br /><br />
+                            {{#if transportadora}}
+                            {{#each transportadora}}
+                            <form action="/cadtransportadora/edit/{{this.dataValues.id}}" method="POST">
+                                <input type="hidden" name="_method" value="PUT">
+
+                                <label for="name">Nome Fantasia:</label>
+                                <input type="text" id="name" name="name" value="{{this.dataValues.name}}" required />
+
+                                <label for="name">Razão Social:</label>
+                                <input type="text" id="razao" name="razao" value="{{this.dataValues.razao}}" required />
+
+
+                                <label for="cnpj">CNPJ:</label>
+                                <input type="text" id="cnpj" name="cnpj" placeholder="00.000.000/0000-00"
+                                    value="{{this.dataValues.cnpj}}" required />
+
+                                <label for="telefone">Telefone:</label>
+                                <input type="text" id="telefone" name="telefone" placeholder="(00) 00000-0000"
+                                    value="{{this.dataValues.telefone}}" required />
+
+                                <label for="telefone">CEP:</label>
+                                <input type="text" id="cep" name="cep" placeholder="00.000-000"
+                                    value="{{this.dataValues.cep}}" required />
+
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" placeholder="mail@mail.com"
+                                    value="{{this.dataValues.email}}" required />
+
+                                <label for="name">Cidade/Estado:</label>
+                                <input type="text" id="cidade" name="cidade" placeholder="São Paulo - SP"
+                                    value="{{this.dataValues.cidade}}" required />
+
+                                <label for="name">Logradouro:</label>
+                                <input type="text" id="logradouro" name="logradouro"
+                                    placeholder="Av. Primeiro de Janeiro, Nº 15"
+                                    value="{{this.dataValues.logradouro}}" required />
+
+                                <button type="submit" class="botao">Atualizar</button>
+                                <a href="/transportadora" class="botao">Cancelar</a>
+                            </form>
+                            {{/each}}
+
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {{else}}
+
+    <div class="container tela-extensa">
+        <div class="usuario-container">
+            <div class="gestao-de-dados">
+                <h2>Lista de Transportadoras</h2><br /><br />
+                <div class="search-form">
+                    <label for="search-box" class="fas fa-search"></label>
+                    <input type="text" id="search-box" placeholder="search here..." onkeyup="searchTransportadora()" />
+                </div>
+                <div class="tableContain">
+                    <div class="scroll">
+                        <table class="rTable" id="transportadora-table">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Razão</th>
+                                    <th>CNPJ</th>
+                                    <th>Telefone</th>
+                                    <th>CEP</th>
+                                    <th>Email</th>
+                                    <th>Cidade</th>
+                                    <th>Logradouro</th>
+                                    <th>Editar</th>
+                                    <th>Excluir</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+                                {{#each transportadoras}}
+                                <tr>
+                                    <td>{{this.dataValues.name}}</td>
+                                    <td>{{this.dataValues.razao}}</td>
+                                    <td>{{this.dataValues.cnpj}}</td>
+                                    <td>{{this.dataValues.telefone}}</td>
+                                    <td>{{this.dataValues.cep}}</td>
+                                    <td>{{this.dataValues.email}}</td>
+                                    <td>{{this.dataValues.cidade}}</td>
+                                    <td>{{this.dataValues.logradouro}}</td>
+                                    <td>
+                                        <form action="/transportadora/edit/{{this.dataValues.id}}" method="GET">
+                                            <input type="hidden" name="_method" value="EDIT">
+                                            <button type="submit" class="btn-editar">Editar</button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form action="/cadtransportadora/delete/{{this.dataValues.id}}" method="POST">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button type="submit" class="btn-excluir"
+                                                onclick="return confirm('Tem certeza de que deseja excluir esta transportadora?')">Excluir</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{/if}}
+
+    <section class="rodape" id="Contato">
+        <div class="redes">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+        </div>
+        <div class="credito"> <span>@IF sistema</span></div>
+    </section>
+
+    <script>
+        function searchTransportadora() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("search-box");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("transportadora-table");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0]; // Alterei o índice para 0, que corresponde à coluna "Nome"
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+    <script src="/js/homepage.js"></script>
+    <script src="/js/transportadora.js"></script>
+    <script src="https://kit.fontawesome.com/560011bd3e.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

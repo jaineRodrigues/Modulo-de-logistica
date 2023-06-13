@@ -5,6 +5,7 @@
     <title>{{title}}</title>
     <link rel="stylesheet" href="/css/personalData.css" />
     <link rel="stylesheet" href="/css/homepage.css" />
+    <link rel="stylesheet" href="/css/transportadora.css" />
   </head>
 
   <body>
@@ -20,6 +21,14 @@
         <input type="text" id="search-box" placeholder="search here..." />
         <label for="search-box" class="fas fa-search"></label>
       </div>
+
+      <nav class="navbar">
+        <a href="./adminPanel">Início</a>
+        <a href="./transportadora">Listar transportadora</a>
+          <i class="fa-solid fa-circle-user user-custom"></i></a>
+        <a href="./logout">Sair</a>
+
+      </nav>
     </header>
 
     {{#if message}}
@@ -27,7 +36,7 @@
         <div class="usuario-container">
           <div class="gestao-de-dados">
             <h2>{{message}}</h2><br /><br />
-            <a href="/cadtransportadora" class="botao">Voltar</a>
+            <a href="/transportadora" class="botao">Voltar</a>
           </div>
         </div>
       </div>
@@ -99,7 +108,7 @@
               />
 
               <button type="submit" class="botao">Cadastrar</button>
-              <a href="/adminPanel" class="botao">Voltar</a>
+              <a href="/transportadora" class="botao">Voltar</a>
             </form>
           </div>
         </div>
@@ -117,6 +126,7 @@
     </section>
 
     <script src="/js/homepage.js"></script>
+    <script src="/js/transportadora.js"></script>
     <script
       src="https://kit.fontawesome.com/560011bd3e.js"
       crossorigin="anonymous"
