@@ -30,3 +30,20 @@ exports.serviceRegistration = async (req, res) => {
     });
   }
 };
+
+exports.searchServices = async (req, res) => {
+  const { placa } = req.query;
+
+  try {
+    const services = await Service.findAll({ where: { veiculo: placa } });
+
+    return res.render("serviceSearch", {
+      services: services,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.render("serviceSearch", {
+      message: "Algo deu errado, por favor tente novamente.",
+    });
+  }
+};
