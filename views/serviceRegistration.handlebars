@@ -25,7 +25,20 @@
         {{#if message}}
         <p>{{message}}</p>
         {{/if}}
-        <p>Registro de Serviços</p>
+
+        <div class="search-container">
+            <form class="buscar-servicos" action="/serviceRegistration/search" method="GET">
+                <label for="placa">Placa do Veículo:</label>
+                <div class="search-input">
+                    <input type="text" name="placa" id="placa" required>
+                    <button class="button-buscar" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <p>Registrar Serviços</p>
         <form class="fazer-registro" action="/serviceRegistration/serviceRegistration" method="POST">
             <label for="veiculo">
                 <select name="veiculo" id="veiculo" required="required">

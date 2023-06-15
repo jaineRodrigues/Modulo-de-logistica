@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/homepage.css" />
+    <link rel="stylesheet" href="/css/center.css">
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css" />
+    <title>Resultado da busca</title>
+</head>
+
+<body>
+    <header class="cabeçalho">
+        <a href="#" class="logo">
+            <img src="/img/logo.jpg" alt="logo do sistema">
+        </a>
+    </header>
+
+    <div class="center-registration">
+        <div class="imagem">
+            <i class="fas fa-file-alt icons-color"></i>
+        </div>
+
+        <div class="search-results">
+            {{#if services.length}}
+            <p>Serviços realizados no carro de placa: {{placa}}</p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Veículo</th>
+                            <th>Tipo de Serviço</th>
+                            <th>Descrição</th>
+                            <th>Data do Serviço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each services}}
+                        <tr>
+                            <td>{{this.dataValues.veiculo}}</td>
+                            <td>{{this.dataValues.tipo}}</td>
+                            <td>{{this.dataValues.descricao}}</td>
+                            <td>{{this.dataValues.dataServico}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                {{else}}
+                <p>Nenhum serviço encontrado para o veículo.</p>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+    <section class="rodape" id="Contato">
+
+        <div class="redes">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+        </div>
+        <div class="credito"> <span>@IF sistema</span></div>
+
+    </section>
+
+    <script src="/js/homepage.js"></script>
+    <script src="https://kit.fontawesome.com/560011bd3e.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

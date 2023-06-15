@@ -39,13 +39,11 @@ app.use('/cadveiculos', require('./routes/vehicleRoutes'));
 app.use('/cadcondutores', require('./routes/driverRoutes'));
 app.use('/cadtransportadora', require('./routes/transportadoraRoutes'));
 app.use('/serviceRegistration', require('./routes/serviceRoutes'));
-//app.use('/forgotPassword', require('./routes/forgotPassword'));
-//const router = require("./routes/pages");
+app.use('/centerRegistration', require('./routes/centerRoutes'));
+app.use('/editCenter', require('./routes/centerRoutes'));
+app.use('/deleteCenter', require('./routes/centerRoutes'));
 
 const db = require('./config/database');
-
-//Middleware global
- 
 
 const port = process.env.PORT || 3000;
 
