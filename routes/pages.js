@@ -3,6 +3,7 @@ const router = express.Router();
 const { authMiddleware } = require('../middlewares/authMiddleware');
 const { listVehicles } = require('../middlewares/listVehicles');
 const { listCenters } = require('../middlewares/centerMiddleware');
+const { listServices } = require('../middlewares/serviceMiddleware');
 const { listTransportadora, getTransportadora } = require('../middlewares/trasportadoraMiddleware');
 
 router.get('/', (req, res) => {
@@ -48,12 +49,12 @@ router.get('/cadtransportadora', authMiddleware, (req, res) => {
     res.render('cadtransportadora', { title: 'Cadastrar Transportadora' });
 })
 
-router.get('/transportadora', authMiddleware, listTransportadora, async(req, res) => {
+router.get('/transportadora', authMiddleware, listTransportadora, async (req, res) => {
     console.log(res.locals.transportadoras)
     res.render('transportadora', { title: 'Lista Transportadora', transportadoras: res.locals.transportadoras });
 })
 
-router.get('/transportadora/edit/:id', authMiddleware, listTransportadora, async(req, res) => {
+router.get('/transportadora/edit/:id', authMiddleware, listTransportadora, async (req, res) => {
     const transportadoraID = req.params.id;
     const transportadora = await getTransportadora(transportadoraID);
     console.log(transportadora[0])
@@ -64,7 +65,7 @@ router.get('/transportadora/edit/:id', authMiddleware, listTransportadora, async
     });
 });
 
-router.get('/transportadora/edit/', authMiddleware, listTransportadora, async(req, res) => {
+router.get('/transportadora/edit/', authMiddleware, listTransportadora, async (req, res) => {
     const transportadoras = await listTransportadora()
     res.render('transportadora', { title: 'Editar Transportadora', editar: false, transportadoras: res.locals.transportadoras });
 });
@@ -90,6 +91,16 @@ router.get('/serviceRegistration', listVehicles, (req, res) => {
         vehicles: res.locals.vehicles,
     });
 });
+
+router.get('/serviceRegistration/search', listServices, (req, res) => {
+    const placa = req.query.placa; // Obtém a placa fornecida na URL
+    res.render('serviceSearch', {
+        title: 'Registro de Serviços',
+        services: res.locals.services,
+        placa: placa // Passa a placa para o template
+    });
+});
+
 
 router.get('/logout', authMiddleware, (req, res) => {
     res.cookie("jwt", "", { maxAge: 1 });
