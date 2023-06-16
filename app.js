@@ -42,6 +42,7 @@ app.use('/serviceRegistration', require('./routes/serviceRoutes'));
 app.use('/centerRegistration', require('./routes/centerRoutes'));
 app.use('/editCenter', require('./routes/centerRoutes'));
 app.use('/deleteCenter', require('./routes/centerRoutes'));
+app.use('/travelRegistration', require('./routes/travelRoutes'));
 
 const db = require('./config/database');
 
