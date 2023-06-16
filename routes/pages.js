@@ -134,4 +134,7 @@ router.get('/centerList', listCenters, (req, res) => {
     });
 });
 
+router.get('/travelRegistration', (req, res) => {
+    res.render('travelRegistration', { title: 'Travel Registration' });
+  });
 module.exports = router;
