@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/homepage.css" />
+    <link rel="stylesheet" href="/css/travel.css">
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css" />
+    <title>{{title}}</title>
+</head>
+
+<body>
+    <header class="cabeçalho">
+        <a href="#" class="logo">
+            <img src="/img/logo.jpg" alt="logo do sistema">
+        </a>
+    </header>
+
+    <div class="travelRegistration">
+        {{#if message}}
+        <p>{{message}}</p>
+        {{/if}}
+
+        {{#if errorMessage}}
+        <p class="error-message">{{errorMessage}}</p>
+        {{/if}}
+
+        <form action="/travelRegistration/travelRegistration" method="POST">
+            <label for="departureDate">Date de saida:</label>
+            <input type="datetime-local" name="departureDate" id="departureDate" required>
+
+            <label for="expectedArrivalDate">Date de chegada:</label>
+            <input type="datetime-local" name="expectedArrivalDate" id="expectedArrivalDate" required>
+
+            <label for="driver">Condutor:</label>
+            <input type="text" name="driver" id="driver" required>
+
+            <label for="vehicle">Veiculo:</label>
+            <input type="text" name="vehicle" id="vehicle" required>
+
+            <button type="submit">Registrar viagem</button>
+        </form>
+    </div>
+    <section class="rodape" id="Contato">
+
+        <div class="redes">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+        </div>
+        <div class="credito"> <span>@IF sistema</span></div>
+
+    </section>
+
+    <script src="/js/homepage.js"></script>
+    <script src="https://kit.fontawesome.com/560011bd3e.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
