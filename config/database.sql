@@ -84,3 +84,14 @@ CREATE TABLE Transportadora (
   codade VARCHAR(255) NOT NULL,
   logradouro VARCHAR(255) NOT NULL
 );
+
+-- Gestão de viagens --
+CREATE TABLE travels (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  departureDate DATETIME NOT NULL,
+  expectedArrivalDate DATETIME NOT NULL,
+  actualArrivalDate DATETIME,
+  driver VARCHAR(255) NOT NULL,
+  vehicle VARCHAR(255) NOT NULL
+);
+
