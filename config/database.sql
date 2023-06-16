@@ -93,5 +93,7 @@ CREATE TABLE travels (
   actualArrivalDate DATETIME,
   driver VARCHAR(255) NOT NULL,
   vehicle VARCHAR(255) NOT NULL
+  createdAt DATETIME NOT NULL;
+  updatedAt DATETIME NOT NULL;
 );
 
